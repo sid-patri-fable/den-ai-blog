@@ -1,8 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 export default function PromotionBannerCta(props) {
   return (
-    <a
+    <Link
       style={{
         fontWeight: '600',
         fontSize: '1rem',
@@ -14,9 +15,9 @@ export default function PromotionBannerCta(props) {
         cursor: 'pointer',
         marginTop: '12px'
       }}
-      href={props.href}
+      to={props.href}
     >
       {props.cta}
-    </a>
+    </Link>
   )
 }

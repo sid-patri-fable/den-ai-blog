@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./index.css";
+import { Link } from "react-router-dom";
 
 const Header = (props) => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -53,8 +54,8 @@ const Header = (props) => {
               maxHeight: "contain",
             }}
           >
-            <a
-              href="/"
+            <Link
+              to="/"
               style={{
                 backgroundColor: "transparent",
                 lineHeight: 1,
@@ -68,7 +69,7 @@ const Header = (props) => {
                 alt="logo"
                 className="header-logo"
               />
-            </a>
+            </Link>
           </h1>
           <div className="header-con-right">
             <div className="menu-screen">
@@ -97,17 +98,17 @@ const Header = (props) => {
                   }
                   return (
                     <li className="header-link-con" key={idx}>
-                      <a className="header-link" href={link.url}>
+                      <Link className="header-link" to={link.url}>
                         {link.title}
-                      </a>
+                      </Link>
                     </li>
                   );
                 })}
               </ul>
             </div>
-            <a className="get-started" href="#">
+            <Link className="get-started" to="#">
               Get started
-            </a>
+            </Link>
             <div className={`hamburger-icon`} onClick={handleToggleMenu}>
               <div className="bar"></div>
               <div className="bar"></div>
@@ -122,7 +123,7 @@ const Header = (props) => {
             >
               {props.props.ctas.map((cta, idx) => {
                 return (
-                  <a
+                  <Link
                     style={{
                       border: "1px solid #9ec8b9",
                       transition: "all .2s ease-out",
@@ -134,11 +135,11 @@ const Header = (props) => {
                       lineHeight: "28px",
                     }}
                     className={`${cta.type === "secondary" ? "cta-secondary" : "cta-primary"}`}
-                    href={cta.url}
+                    to={cta.url}
                     key={`${cta.url}-${idx}`}
                   >
                     {cta.title}
-                  </a>
+                  </Link>
                 );
               })}
             </div>
@@ -204,9 +205,9 @@ const MenuItemMobile = (props) => {
           />
         </div>
       ) : (
-        <a
+        <Link
           className="menu-item-header"
-          href={props.item.url}
+          to={props.item.url}
           style={{
             width: "100%",
             color: "inherit",
@@ -215,20 +216,20 @@ const MenuItemMobile = (props) => {
           }}
         >
           {props.item.title}
-        </a>
+        </Link>
       )}
       {hasSublinks && (
         <div className="menu-item-content">
           {props.item.sublinks.map((sublink, idx) => (
-            <a
-              href={sublink.url}
+            <Link
+              to={sublink.url}
               key={`${sublink.title}-${idx}`}
               target="_blank"
               rel="noopener noreferrer"
               style={{ display: "flex", alignItems: "center", gap: "0.8rem" }}
             >
               <div key={sublink.title}>{sublink.title}</div>
-            </a>
+            </Link>
           ))}
         </div>
       )}
@@ -285,8 +286,8 @@ function Menu(props) {
                     margin: "0",
                   }}
                 >
-                  <a
-                    href={link.url}
+                  <Link
+                    to={link.url}
                     style={{
                       display: "flex",
                       gap: "0.6rem",
@@ -320,7 +321,7 @@ function Menu(props) {
                         {link.subtitle}
                       </p>
                     </div>
-                  </a>
+                  </Link>
                 </li>
               );
             })}
