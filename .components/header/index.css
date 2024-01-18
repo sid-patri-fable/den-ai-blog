@@ -14,21 +14,15 @@ body.no-scroll {
   position: relative;
   color: #fff;
   background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
 }
 
 .header-link:hover {
   background-color: transparent;
   color: #9ec8b9;
-}
-
-.header-link::after {
-  content: '';
-  width: 100%;
-  height: 2rem;
-  background-color: transparent;
-  position: absolute;
-  top: 90%;
-  left: 0;
 }
 
 .menu-visible {
@@ -41,7 +35,7 @@ body.no-scroll {
 .menu-hidden {
   visibility: hidden;
   opacity: 0;
-  transform: translate(-50%, -100px);
+  transform: translate(-50%, -20px);
   transition: visibility 0s ease-in-out 0.1s, opacity 0.1s ease-in-out 0.1s, transform 0.3s linear;
 }
 

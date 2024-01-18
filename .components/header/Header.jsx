@@ -217,126 +217,121 @@ function Menu(props) {
   const [showMenu, setShowMenu] = useState(false)
   return (
     <>
-    <div style={{position: "relative"}}>
-      <span
-        className='header-link'
-        onMouseEnter={() => setShowMenu(true)}
-        onMouseLeave={() => setShowMenu(false)}
-        style={{
-          cursor: 'pointer',
-        }}
-      >
-        {props.title}
-        <img
-          src="https://github.com/sid-patri-fable/fable-blog/assets/117962421/ce8148a2-9141-43be-ba29-d04c908af25d"
-          style={{
-            width: '1rem',
-            height: '1rem',
-            marginLeft: '5px',
-            marginTop: "5px",
-            transform: `${showMenu ? 'rotate(180deg)' : 'rotate(0)'}`,
-            transition: 'all 0.3s ease-out'
+      <div style={{ position: "relative" }}>
+        <span
+          className='header-link'
+          onClick={() => {
+            setShowMenu(prv => !prv)
           }}
-          alt="icon"
-        />
-      </span>
-      <div
-        onMouseEnter={() => setShowMenu(true)}
-        onMouseLeave={() => setShowMenu(false)}
-        className={`menu ${showMenu ? 'menu-visible' : 'menu-hidden'}`}
-        style={{
-          width: 'fit-content',
-          minWidth: "360px",
-          maxWidth: '1500px',
-          height: 'fit-content',
-          backgroundColor: 'transparent',
-          position: 'absolute',
-          top: '40px',
-          left: '50%',
-          zIndex: -1,
-        }}
-      >
-        <div
           style={{
-            margin: '0.5rem',
-            height: '100%',
-            backgroundColor: '#fff',
-            borderRadius: '0.6rem',
-            display: 'flex',
-            padding: '1rem',
-            alignItems: 'stretch'
+            cursor: 'pointer',
+          }}
+        >
+          {props.title}
+          <img
+            src="https://github.com/sid-patri-fable/fable-blog/assets/117962421/ce8148a2-9141-43be-ba29-d04c908af25d"
+            style={{
+              width: '1rem',
+              height: '1rem',
+              transform: `rotate(0deg)`,
+              transition: 'all 0.3s ease-out'
+            }}
+            alt="icon"
+          />
+        </span>
+        <div
+          className={`menu ${showMenu ? 'menu-visible' : 'menu-hidden'}`}
+          style={{
+            maxWidth: '1500px',
+            height: 'fit-content',
+            backgroundColor: 'transparent',
+            position: 'absolute',
+            top: '40px',
+            left: '50%',
+            zIndex: -1,
+            width: '280px'
           }}
         >
           <div
             style={{
-              flex: '0.6',
-              padding: '1rem'
+              margin: '0.5rem',
+              height: '100%',
+              backgroundColor: '#fff',
+              borderRadius: '0.6rem',
+              display: 'flex',
+              padding: '1rem',
+              alignItems: 'stretch'
             }}
           >
-            <ul
+            <div
               style={{
-                listStyle: 'none',
-                padding: 0,
-                display: 'grid',
-                gridTemplateColumns: '1fr',
-                gap: '0.4rem',
-                marginTop: '1rem'
+                padding: '1rem'
               }}
             >
-              {props.subLinks.map((link, idx) => {
-                return (
-                  <li
-                    key={idx}
-                    style={{
-                      margin: '0'
-                    }}
-
-                  >
-                    <a
-                      href={link.url}
+              <ul
+                style={{
+                  listStyle: 'none',
+                  padding: 0,
+                  display: 'grid',
+                  gridTemplateColumns: '1fr',
+                  gap: '0.4rem',
+                  marginTop: '1rem',
+                  width: '100%'
+                }}
+              >
+                {props.subLinks.map((link, idx) => {
+                  return (
+                    <li
+                      key={idx}
                       style={{
-                        color: '#000',
-                        fontSize: '0.9rem',
-                        display: 'flex',
-                        gap: '0.6rem',
-                        alignItems: 'center',
-                        padding: '0.5rem',
-                        borderRadius: '8px'
+                        margin: '0'
                       }}
-                      className='menu-links'
                     >
-                      <div
+                      <a
+                        href={link.url}
+                        style={{
+                          color: '#000',
+                          fontSize: '0.9rem',
+                          display: 'flex',
+                          gap: '0.6rem',
+                          alignItems: 'center',
+                          padding: '0.5rem',
+                          borderRadius: '8px'
+                        }}
+                        className='menu-links'
                       >
-                        <p
-                          style={{
-                            fontSize: '0.9rem',
-                            margin: 0,
-                            fontWeight: '600',
-                            lineHeight: '1'
-                          }}
+                        <div
                         >
-                          {link.title}
-                        </p>
-                        <p
-                          style={{
-                            fontSize: '0.9rem',
-                            margin: 0,
-                            lineHeight: '1',
-                            marginTop: '4px'
-                          }}
-                        >
-                          {link.subtitle}
-                        </p>
-                      </div>
-                    </a>
-                  </li>
-                )
-              })}
-            </ul>
+                          <p
+                            style={{
+                              fontSize: '0.9rem',
+                              margin: 0,
+                              fontWeight: '600',
+                              lineHeight: '1'
+                            }}
+                          >
+                            {link.title}
+                          </p>
+                          <p
+                            style={{
+                              fontSize: '0.9rem',
+                              margin: 0,
+                              lineHeight: '1',
+                              marginTop: '4px'
+                            }}
+                          >
+                            {link.subtitle}
+                          </p>
+                        </div>
+                      </a>
+                    </li>
+                  )
+                })}
+              </ul>
+            </div>
+
           </div>
-          
         </div>
-      </div>
       </div>
     </>
   )
