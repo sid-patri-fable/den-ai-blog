@@ -1,4 +1,5 @@
 import Header from "./.components/header/Header.jsx"
+import Footer from "./.components/footer/index.jsx"
 
 module.exports = {
   version: "1.0.0",
@@ -78,6 +79,7 @@ module.exports = {
       show: false,
     },
     footer: {
+      customComponent: Footer,
       logo: 'https://assets-global.website-files.com/6582e53622faa84165a9174f/6582eb16ed0b1cfa07fee730_Den%20AI%20Full%20Logo.svg',
       copyright: 'Den AI © 2024',
       links: [
