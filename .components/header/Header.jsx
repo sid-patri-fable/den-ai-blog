@@ -70,75 +70,77 @@ const Header = (props) => {
               />
             </a>
           </h1>
-          <div className="menu-screen">
-            <ul
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "2rem",
-                fontSize: "0.9rem",
-                listStyleType: "none",
-                padding: 0,
-                margin: 0,
-              }}
-            >
-              {props.props.navLinks.links.map((link, idx) => {
-                if (link?.sublinks) {
+          <div className="header-con-right">
+            <div className="menu-screen">
+              <ul
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "2rem",
+                  fontSize: "0.9rem",
+                  listStyleType: "none",
+                  padding: 0,
+                  margin: 0,
+                }}
+              >
+                {props.props.navLinks.links.map((link, idx) => {
+                  if (link?.sublinks) {
+                    return (
+                      <li key={idx} className="header-link-con">
+                        <Menu
+                          title={link.title}
+                          subTitle={link.subtitle}
+                          subLinks={link.sublinks}
+                        />
+                      </li>
+                    );
+                  }
                   return (
-                    <li key={idx} className="header-link-con">
-                      <Menu
-                        title={link.title}
-                        subTitle={link.subtitle}
-                        subLinks={link.sublinks}
-                      />
+                    <li className="header-link-con" key={idx}>
+                      <a className="header-link" href="#">
+                        {link.title}
+                      </a>
                     </li>
                   );
-                }
+                })}
+              </ul>
+            </div>
+            <a className="get-started" href="#">
+              Get started
+            </a>
+            <div className={`hamburger-icon`} onClick={handleToggleMenu}>
+              <div className="bar"></div>
+              <div className="bar"></div>
+              <div className="bar"></div>
+            </div>
+            <div
+              className="cta-con"
+              style={{
+                alignItems: "center",
+                gap: "1.2rem",
+              }}
+            >
+              {props.props.ctas.map((cta, idx) => {
                 return (
-                  <li className="header-link-con" key={idx}>
-                    <a className="header-link" href="#">
-                      {link.title}
-                    </a>
-                  </li>
+                  <a
+                    style={{
+                      border: "2px solid #9ec8b9",
+                      transition: "all .2s ease-out",
+                      padding: "1rem 2rem",
+                      font: "inherit",
+                      borderRadius: "8px",
+                      fontSize: "1rem",
+                      fontWeight: 500,
+                    }}
+                    className={`${cta.type === "secondary" ? "cta-secondary" : "cta-primary"}`}
+                    href={cta.url}
+                    key={`${cta.url}-${idx}`}
+                  >
+                    {cta.title}
+                  </a>
                 );
               })}
-            </ul>
-          </div>
-          <div
-            className={`hamburger-icon ${menuOpen ? "open" : ""}`}
-            onClick={handleToggleMenu}
-          >
-            <div className="bar"></div>
-            <div className="bar"></div>
-            <div className="bar"></div>
-          </div>
-          <div
-            className="cta-con"
-            style={{
-              alignItems: "center",
-              gap: "1.2rem",
-            }}
-          >
-            {props.props.ctas.map((cta, idx) => {
-              return (
-                <a
-                  style={{
-                    border: "2px solid #9ec8b9",
-                    transition: "all .2s ease-out",
-                    padding: "1rem 2rem",
-                    font: "inherit",
-                    borderRadius: "8px",
-                    fontSize: "1rem",
-                    fontWeight: 500,
-                  }}
-                  className={`${cta.type === "secondary" ? "cta-secondary" : "cta-primary"}`}
-                  href={cta.url}
-                  key={`${cta.url}-${idx}`}
-                >
-                  {cta.title}
-                </a>
-              );
-            })}
+            </div>
           </div>
         </div>
       </div>
@@ -278,11 +280,7 @@ function Menu(props) {
               alignItems: "stretch",
             }}
           >
-            <div
-              style={{
-                padding: "1rem",
-              }}
-            >
+            <div>
               <ul
                 style={{
                   listStyle: "none",
@@ -305,8 +303,6 @@ function Menu(props) {
                       <a
                         href={link.url}
                         style={{
-                          color: "#000",
-                          fontSize: "0.9rem",
                           display: "flex",
                           gap: "0.6rem",
                           alignItems: "center",
@@ -318,9 +314,9 @@ function Menu(props) {
                         <div>
                           <p
                             style={{
-                              fontSize: "0.9rem",
+                              fontSize: "16px",
                               margin: 0,
-                              fontWeight: "600",
+                              fontWeight: "500",
                               lineHeight: "1",
                             }}
                           >
