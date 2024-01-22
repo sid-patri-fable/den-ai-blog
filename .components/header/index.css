@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Handlee&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Jura:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Handlee&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Jura:wght@300;400;500;600;700&display=swap");
 
 body.no-scroll {
   overflow: hidden;
@@ -29,14 +29,20 @@ body.no-scroll {
   visibility: visible;
   opacity: 1;
   transform: translate(-50%, 0);
-  transition: visibility 0s ease-in-out, opacity 0.1s ease-in-out, transform 0.3s;
+  transition:
+    visibility 0s ease-in-out,
+    opacity 0.1s ease-in-out,
+    transform 0.3s;
 }
 
 .menu-hidden {
   visibility: hidden;
   opacity: 0;
   transform: translate(-50%, -20px);
-  transition: visibility 0s ease-in-out 0.1s, opacity 0.1s ease-in-out 0.1s, transform 0.3s linear;
+  transition:
+    visibility 0s ease-in-out 0.1s,
+    opacity 0.1s ease-in-out 0.1s,
+    transform 0.3s linear;
 }
 
 .cta-secondary {
@@ -133,21 +139,20 @@ body.no-scroll {
 .menu-content {
   display: block;
   position: fixed;
-  top: 0;
-  left: -100%;
-  height: 100%;
-  width: 60%;
+  top: -100%;
+  left: 0;
+  height: fit-content;
+  width: 100%;
   min-width: 20rem;
-  max-width: 24rem;
   background-color: rgb(251, 246, 255);
   box-shadow: -1px 0 10px rgba(0, 0, 0, 0.1);
-  padding-top: 100px;
   z-index: 2;
   transition: 0.4s;
+  border-radius: 10px;
 }
 
 .menu-content.open {
-  left: 0;
+  top: 90px;
 }
 
 .menu-content-mobile {
@@ -158,41 +163,44 @@ body.no-scroll {
 }
 .menu-content-mobile .menu-item {
   padding: 1rem;
-  border-bottom: 1px solid rgb(208, 208, 255);
+  font-weight: 500;
+  opacity: 0.7;
 }
 
-.collapsible .menu-item-content  {
+.collapsible .menu-item-content {
   overflow: hidden;
   max-height: 0px;
   transition: all 0.3s ease-in;
 }
 
-.collapsible.open .menu-item-content  {
-  max-height: 20rem;
+.collapsible.open .menu-item-content {
+  max-height: 21rem;
   height: fit-content;
 }
 .menu-content-mobile .menu-item-content {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0rem;
 }
 .menu-content-mobile .menu-item-content a {
   padding: 1rem;
+  padding-left: 0rem;
   display: block;
   color: inherit;
   background: transparent;
   width: 100%;
+  font-size: var(--font-size-base);
 }
 
 @media only screen and (min-width: 992px) {
   .header-con {
     padding: 1rem 1rem;
   }
-  
+
   .menu-screen {
     display: block;
   }
-  
+
   .cta-con {
     display: flex;
   }
