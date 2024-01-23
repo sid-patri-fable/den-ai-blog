@@ -122,7 +122,20 @@ module.exports = {
         },
         {
           heading: "Resources",
-          links: [{ title: "Blog", url: "https://www.theden.ai/blog" }],
+          links: [
+            {
+              title: "Blog",
+              url: "https://www.theden.ai/blog",
+            },
+            {
+              title: "Terms of Service",
+              url: "https://www.theden.ai/terms-of-service",
+            },
+            {
+              title: "Privacy Policy",
+              url: "https://www.theden.ai/privacy-policy",
+            },
+          ],
         },
       ],
     },
@@ -139,7 +152,7 @@ module.exports = {
       border: "#d1d5db",
     },
     typography: {
-      fontSize: 16,
+      fontSize: "16px",
       fontFamily: "Inter",
       lineHeight: 1.5,
       h1: {

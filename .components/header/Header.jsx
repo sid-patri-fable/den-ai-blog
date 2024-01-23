@@ -55,15 +55,18 @@ const Header = (props) => {
           >
             <a
               href="/"
-              style={{ backgroundColor: "transparent", lineHeight: 1 }}
+              style={{
+                backgroundColor: "transparent",
+                lineHeight: 1,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
             >
               <img
                 src={props.props.logo.imageUrl}
-                alt="fable logo"
-                style={{
-                  height: "36px",
-                  width: "142px",
-                }}
+                alt="logo"
+                className="header-logo"
               />
             </a>
           </h1>
@@ -127,7 +130,8 @@ const Header = (props) => {
                       font: "inherit",
                       borderRadius: "8px",
                       fontSize: "1rem",
-                      fontWeight: 500,
+                      fontWeight: 600,
+                      lineHeight: "28px",
                     }}
                     className={`${cta.type === "secondary" ? "cta-secondary" : "cta-primary"}`}
                     href={cta.url}
@@ -146,7 +150,7 @@ const Header = (props) => {
         onClick={handleToggleMenu}
       ></div>
       <div className={`menu-content ${menuOpen ? "open" : ""}`}>
-        <div style={{ height: "100%", padding: "1rem" }}>
+        <div style={{ height: "100%", padding: "10px 0" }}>
           <div className="menu-content-mobile">
             {props.props.navLinks.links.map((link) => (
               <MenuItemMobile key={link.title} item={link} />
@@ -170,6 +174,14 @@ const MenuItemMobile = (props) => {
   return (
     <div
       className={`menu-item ${hasSublinks ? "collapsible" : ""} ${isOpen ? "open" : ""}`}
+      style={
+        isOpen
+          ? {
+              paddingTop: "",
+              paddingBottom: "0px",
+            }
+          : {}
+      }
     >
       {hasSublinks ? (
         <div
@@ -185,11 +197,8 @@ const MenuItemMobile = (props) => {
           <img
             src="https://github.com/sid-patri-fable/fable-blog/assets/117962421/ce8148a2-9141-43be-ba29-d04c908af25d"
             style={{
-              height: "24px",
-              marginLeft: "5px",
-              transform: `${isOpen ? "rotate(180deg)" : "rotate(0)"}`,
-              transition: "all 0.3s ease-out",
-              filter: "invert(100%)",
+              height: "20px",
+              filter: "invert(50%)",
             }}
             alt="icon"
           />
@@ -245,8 +254,8 @@ function Menu(props) {
           <img
             src="https://github.com/sid-patri-fable/fable-blog/assets/117962421/ce8148a2-9141-43be-ba29-d04c908af25d"
             style={{
-              width: "1rem",
-              height: "1rem",
+              width: "20px",
+              height: "20px",
               transform: `rotate(0deg)`,
               transition: "all 0.3s ease-out",
             }}
@@ -256,87 +265,66 @@ function Menu(props) {
         <div
           className={`menu ${showMenu ? "menu-visible" : "menu-hidden"}`}
           style={{
-            maxWidth: "1500px",
-            height: "fit-content",
-            backgroundColor: "transparent",
             position: "absolute",
-            top: "40px",
-            left: "50%",
+            left: "75%",
             zIndex: -1,
-            width: "280px",
           }}
         >
-          <div
+          <ul
             style={{
-              margin: "0.5rem",
-              height: "100%",
-              backgroundColor: "#fff",
-              borderRadius: "0.6rem",
-              display: "flex",
-              padding: "1rem",
-              alignItems: "stretch",
+              listStyle: "none",
+              padding: 0,
+              gridTemplateColumns: "1fr",
             }}
           >
-            <div>
-              <ul
-                style={{
-                  listStyle: "none",
-                  padding: 0,
-                  display: "grid",
-                  gridTemplateColumns: "1fr",
-                  gap: "0.4rem",
-                  marginTop: "1rem",
-                  width: "100%",
-                }}
-              >
-                {props.subLinks.map((link, idx) => {
-                  return (
-                    <li
-                      key={idx}
-                      style={{
-                        margin: "0",
-                      }}
-                    >
-                      <a
-                        href={link.url}
+            {props.subLinks.map((link, idx) => {
+              return (
+                <li
+                  key={idx}
+                  style={{
+                    margin: "0",
+                  }}
+                >
+                  <a
+                    href={link.url}
+                    style={{
+                      display: "flex",
+                      gap: "0.6rem",
+                      alignItems: "center",
+                      borderRadius: "8px",
+                      whiteSpace: "nowrap",
+                      padding: "11px 0",
+                      lineHeight: "24px",
+                    }}
+                    className="menu-links"
+                  >
+                    <div>
+                      <p
                         style={{
-                          display: "flex",
-                          gap: "0.6rem",
-                          alignItems: "center",
-                          padding: "0.5rem",
-                          borderRadius: "8px",
+                          fontSize: "16px",
+                          margin: 0,
+                          fontWeight: "500",
+                          lineHeight: "1",
                         }}
-                        className="menu-links"
                       >
-                        <div>
-                          <p
-                            style={{
-                              fontSize: "16px",
-                              margin: 0,
-                              fontWeight: "500",
-                              lineHeight: "1",
-                            }}
-                          >
-                            {link.title}
-                          </p>
-                          <p
-                            style={{
-                              fontSize: "0.9rem",
-                              margin: 0,
-                              lineHeight: "1",
-                              marginTop: "4px",
-                            }}
-                          >
-                            {link.subtitle}
-                          </p>
-                        </div>
-                      </a>
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-          </div>
+                        {link.title}
+                      </p>
+                      <p
+                        style={{
+                          fontSize: "0.9rem",
+                          margin: 0,
+                          lineHeight: "1",
+                          marginTop: "4px",
+                        }}
+                      >
+                        {link.subtitle}
+                      </p>
+                    </div>
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
         </div>
       </div>
     </>
