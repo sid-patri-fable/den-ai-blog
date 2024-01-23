@@ -8,11 +8,11 @@ module.exports = {
     entries: {},
     baseUrl: "https://www.theden.ai/",
   },
-  name: 'The Den AI Blog',
+  name: "The Den AI Blog",
   favicons: {
     iconUrl: {
-      '16x16': 'https://www.theden.ai/images/favicon.svg'
-    }
+      "16x16": "https://www.theden.ai/images/favicon.svg",
+    },
   },
   props: {
     header: {
@@ -31,28 +31,28 @@ module.exports = {
             subtitle: "The ultimate demo platform for all your GTM needs",
             sublinks: [
               {
-                title: 'Customer Support',
-                url: 'https://www.theden.ai/solutions/customer-support'
+                title: "Customer Support",
+                url: "https://www.theden.ai/solutions/customer-support",
               },
               {
-                title: 'Lead Generation',
-                url: 'https://www.theden.ai/solutions/lead-generation'
+                title: "Lead Generation",
+                url: "https://www.theden.ai/solutions/lead-generation",
               },
               {
-                title: 'e-Commerce',
-                url: 'https://www.theden.ai/solutions/e-commerce'
+                title: "e-Commerce",
+                url: "https://www.theden.ai/solutions/e-commerce",
               },
               {
-                title: 'Internal Wiki',
-                url: 'https://www.theden.ai/solutions/internal-wiki'
+                title: "Internal Wiki",
+                url: "https://www.theden.ai/solutions/internal-wiki",
               },
               {
-                title: 'HR Assistant',
-                url: 'https://www.theden.ai/solutions/hr-assistant'
+                title: "HR Assistant",
+                url: "https://www.theden.ai/solutions/hr-assistant",
               },
               {
-                title: 'Academic Research',
-                url: 'https://www.theden.ai/solutions/academic-research'
+                title: "Academic Research",
+                url: "https://www.theden.ai/solutions/academic-research",
               },
             ],
           },
@@ -140,7 +140,7 @@ module.exports = {
     },
     typography: {
       fontSize: 16,
-      fontFamily: "IBM Plex Sans",
+      fontFamily: "Inter",
       lineHeight: 1.5,
       h1: {
         margin: "0 0 1.5rem 0",

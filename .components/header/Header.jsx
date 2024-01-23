@@ -33,15 +33,12 @@ const Header = (props) => {
       <div
         style={{
           backgroundColor: "#092635",
-          position: "sticky",
-          top: "0",
-          zIndex: "4",
         }}
         className="header-con"
       >
         <div
           style={{
-            maxWidth: "1500px",
+            maxWidth: "1400px",
             margin: "0 auto",
             display: "flex",
             alignItems: "center",
@@ -64,8 +61,8 @@ const Header = (props) => {
                 src={props.props.logo.imageUrl}
                 alt="fable logo"
                 style={{
-                  height: "48px",
-                  width: "112px",
+                  height: "36px",
+                  width: "142px",
                 }}
               />
             </a>
@@ -97,7 +94,7 @@ const Header = (props) => {
                   }
                   return (
                     <li className="header-link-con" key={idx}>
-                      <a className="header-link" href="#">
+                      <a className="header-link" href={link.url}>
                         {link.title}
                       </a>
                     </li>
@@ -124,9 +121,9 @@ const Header = (props) => {
                 return (
                   <a
                     style={{
-                      border: "2px solid #9ec8b9",
+                      border: "1px solid #9ec8b9",
                       transition: "all .2s ease-out",
-                      padding: "1rem 2rem",
+                      padding: "12px",
                       font: "inherit",
                       borderRadius: "8px",
                       fontSize: "1rem",

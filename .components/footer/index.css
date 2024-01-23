@@ -1,6 +1,7 @@
 .footer {
   background: var(--primary-color);
-  padding: 5rem 1.6rem 3rem;
+  padding: 80px 40px 40px;
+  margin-top: 60px;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
 }
@@ -8,6 +9,7 @@
 .footer-con {
   max-width: 1400px;
   margin: 0 auto;
+  margin-bottom: 60px;
 }
 
 .footer-con-main {
@@ -59,11 +61,12 @@
 
 .footer-links li a:hover {
   background: transparent;
+  color: white;
 }
 
 .footer-logo {
-  width: 200px;
-  height: 63px;
+  width: 158px;
+  height: 40px;
 }
 
 @media screen and (min-width: 576px) {
