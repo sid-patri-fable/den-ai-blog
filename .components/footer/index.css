@@ -1,6 +1,6 @@
 .footer {
   background: var(--primary-color);
-  padding: 80px 40px 40px;
+  padding: 40px 32px;
   margin-top: 60px;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
@@ -9,7 +9,7 @@
 .footer-con {
   max-width: 1400px;
   margin: 0 auto;
-  margin-bottom: 60px;
+  margin-bottom: 32px;
 }
 
 .footer-con-main {
@@ -45,7 +45,6 @@
   flex-direction: column;
   margin: 0;
   gap: 0.7rem;
-  opacity: 0.5;
 }
 
 .footer-links li {
@@ -53,15 +52,14 @@
 }
 
 .footer-links li a {
-  font-size: var(--font-size-base);
-  color: var(--text-secondary-color);
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
   font-weight: 500;
-  opacity: 1;
 }
 
 .footer-links li a:hover {
   background: transparent;
-  color: white;
+  color: rgba(255, 255, 255, 1);
 }
 
 .footer-logo {
@@ -70,12 +68,20 @@
 }
 
 @media screen and (min-width: 576px) {
-  .footer {
-    padding: 5rem 3.6rem 3rem;
+  .footer-con-links div {
+    min-width: fit-content;
   }
 }
 
 @media screen and (min-width: 992px) {
+  .footer {
+    padding: 80px 40px 40px;
+  }
+
+  .footer-con {
+    margin-bottom: 60px;
+  }
+
   .footer-con-main {
     display: flex;
     flex-direction: row;
@@ -92,7 +98,12 @@
     gap: 6rem;
     flex-wrap: wrap;
   }
+
   .footer-con-links div {
     min-width: fit-content;
+  }
+
+  .footer-links li a {
+    font-size: var(--font-size-base);
   }
 }

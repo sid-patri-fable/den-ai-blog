@@ -2,9 +2,9 @@ import React from "react";
 import "./index.css";
 
 const Footer = (props) => {
-  const footerLogoUrl = props.props.logo; // string
-  const copyrightText = props.props.copyright || ""; // string
-  const links = props.props.links || []; // Array<{ heading: string, links: Array<{title: string, link: string}> }>
+  const footerLogoUrl = props.props.logo;
+  const copyrightText = props.props.copyright || "";
+  const links = props.props.links || [];
 
   return (
     <footer className="footer">
