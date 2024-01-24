@@ -1,9 +1,14 @@
+:root {
+  --max-width-large: 1280px;
+  --font-size-base: 16px;
+}
+
 .promotion-con {
   margin: 2rem auto;
 }
 
 .content-con {
-  max-width: 1280px;
+  max-width: var(--max-width-large);
   padding: 0rem;
   margin: 0 auto;
   display: flex;

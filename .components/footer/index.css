@@ -1,0 +1,127 @@
+.footer {
+  background: var(--primary-color);
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  padding: 40px 20px;
+}
+
+.footer-con {
+  max-width: 1400px;
+  margin: 0 auto;
+  margin-bottom: 32px;
+}
+
+.footer-con-main {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 2rem;
+}
+
+.footer-con-links {
+  grid-column-gap: 10px;
+  grid-row-gap: 24px;
+  grid-template-rows: auto auto;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-columns: 1fr;
+  display: grid;
+}
+
+.footer-link-title {
+  font-weight: 600;
+  margin: 0;
+  margin-bottom: 20px;
+  color: var(--text-secondary-color);
+  font-size: var(--font-size-base);
+  padding: 10px 0;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  gap: 23px;
+}
+
+.footer-links li {
+  margin: 0;
+}
+
+.footer-links li a {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+}
+
+.footer-links li a:hover {
+  background: transparent;
+  color: rgba(255, 255, 255, 1);
+}
+
+.footer-con-links div {
+  margin: 0 20px;
+}
+
+.footer-logo {
+  width: 158px;
+  height: 40px;
+}
+
+@media screen and (min-width: 479px) {
+  .footer-con-links {
+    display: flex;
+    gap: 2rem;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .footer {
+    padding: 40px 32px;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .footer-con-links div {
+    min-width: fit-content;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .footer {
+    padding: 80px 40px 40px;
+  }
+
+  .footer-con {
+    margin-bottom: 60px;
+  }
+
+  .footer-con-main {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 5rem;
+  }
+
+  .footer-con-links {
+    display: flex;
+    max-width: 35rem;
+    flex: 1 1;
+    justify-content: space-between;
+    gap: 56px;
+  }
+
+  .footer-con-links div {
+    min-width: fit-content;
+  }
+
+  .footer-link-title {
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .footer-links li a {
+    font-size: var(--font-size);
+  }
+}
