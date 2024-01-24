@@ -11,7 +11,7 @@ const addGTMandGA = () => {
   })(window,document,'script','dataLayer','GTM-NB4NMFBM');</script>
   `
   const gtmNoScript = `
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NB4NMFBM"
+  <noscript id="GTM-NB4NMFBM"><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NB4NMFBM"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   `;
   const ga = `
@@ -31,7 +31,7 @@ const addGTMandGA = () => {
   if (!head.querySelector('script[src*="G-E1VZFYS5T0"]')) {
     head.insertAdjacentHTML('afterbegin', ga);
   }
-  if (!body.querySelector('iframe[src*="GTM-NB4NMFBM"]')) {
+  if (!body.querySelector('noscript[id="GTM-NB4NMFBM"]')) {
     body.insertAdjacentHTML('afterbegin', gtmNoScript);
   }
 }
