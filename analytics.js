@@ -31,9 +31,9 @@ const addGTMandGA = () => {
   if (!head.querySelector('script[src*="G-E1VZFYS5T0"]')) {
     head.insertAdjacentHTML('afterbegin', ga);
   }
-  // if (!body.querySelector('iframe[src*="GTM-NB4NMFBM"]')) {
-  //   body.insertAdjacentHTML('afterbegin', gtmNoScript);
-  // }
+  if (!body.querySelector('iframe[src*="GTM-NB4NMFBM"]')) {
+    body.insertAdjacentHTML('afterbegin', gtmNoScript);
+  }
 }
 
 addGTMandGA();
