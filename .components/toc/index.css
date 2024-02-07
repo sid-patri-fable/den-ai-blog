@@ -2,7 +2,7 @@
   max-width: 18rem;
   position: sticky;
   position: -webkit-sticky;
-  top: 120px;
+  top: 0;
   height: fit-content;
   display: none;
 }
