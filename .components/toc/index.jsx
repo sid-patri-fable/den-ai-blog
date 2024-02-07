@@ -16,7 +16,14 @@ const TOC = (props) => {
               className="toc-list-item"
               key={`${content.data.hProperties.id}`}
             >
-              <a href={`#${content.data.hProperties.id}`}>{content.value}</a>
+              <a
+                style={{
+                  background: "transparent",
+                }}
+                href={`#${content.data.hProperties.id}`}
+              >
+                {content.value}
+              </a>
             </li>
           );
         })}
