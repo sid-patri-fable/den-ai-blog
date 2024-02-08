@@ -16,15 +16,14 @@ const CustomLayout = (props) => {
   const isBlogRoute = rgxBlogRoute.test(window.location.pathname);
 
   const bannerDetails = {
-    title: props.frontmatter.bannerTitle || props.frontmatter.bannerSubtitle,
+    title: props.frontmatter.bannerTitle || props.frontmatter.title,
     subtitle: props.frontmatter.bannerSubtitle || props.frontmatter.subtitle,
     date: props.frontmatter.bannerDate || props.frontmatter.date,
     image: props.frontmatter.bannerImg || props.frontmatter.ogImg,
   };
 
   const promotionDetails = {
-    title:
-      props.frontmatter.promotionTitle || props.frontmatter.promotionSubtitle,
+    title: props.frontmatter.promotionTitle,
     subtitle: props.frontmatter.promotionSubtitle,
     link: props.frontmatter.promotionLink,
     ctaText: props.frontmatter.promotionCTA,
@@ -51,7 +50,7 @@ const CustomLayout = (props) => {
         </Banner>
       )}
       <Content toc={props.toc.length && props.toc}>{props.children}</Content>
-      {promotionDetails.title && (
+      {(promotionDetails.title || promotionDetails.subtitle) && (
         <Promotion config={props.config}>
           <h2>{promotionDetails.title}</h2>
           <p>{promotionDetails.subtitle}</p>
