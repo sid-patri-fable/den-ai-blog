@@ -178,9 +178,9 @@ const MenuItemMobile = (props) => {
       style={
         isOpen
           ? {
-              paddingTop: "",
-              paddingBottom: "0px",
-            }
+            paddingTop: "",
+            paddingBottom: "0px",
+          }
           : {}
       }
     >
@@ -268,7 +268,7 @@ function Menu(props) {
           style={{
             position: "absolute",
             left: "75%",
-            zIndex: -1,
+            zIndex: 2,
           }}
         >
           <ul

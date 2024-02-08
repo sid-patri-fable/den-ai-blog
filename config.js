@@ -1,5 +1,6 @@
 import Header from "./.components/header/Header.jsx";
 import Footer from "./.components/footer/index.jsx";
+import CustomLayout from "./.components/custom-layout/CustomLayout.jsx";
 
 module.exports = {
   version: "1.0.0",
@@ -8,6 +9,7 @@ module.exports = {
     entries: {},
     baseUrl: "https://www.theden.ai/",
   },
+  layout: CustomLayout,
   name: "The Den AI Blog",
   favicons: {
     iconUrl: {
