@@ -17,17 +17,17 @@ const CustomLayout = (props) => {
 
   const bannerDetails = {
     title: props.frontmatter.bannerTitle || props.frontmatter.bannerSubtitle,
-    subtitle: props.frontmatter?.bannerSubtitle || props.frontmatter?.subtitle,
-    date: props.frontmatter?.bannerDate || props.frontmatter?.date,
-    image: props.frontmatter?.bannerImg || props.frontmatter?.ogImg,
+    subtitle: props.frontmatter.bannerSubtitle || props.frontmatter.subtitle,
+    date: props.frontmatter.bannerDate || props.frontmatter.date,
+    image: props.frontmatter.bannerImg || props.frontmatter.ogImg,
   };
 
   const promotionDetails = {
     title:
-      props.frontmatter?.promotionTitle || props.frontmatter?.promotionSubtitle,
-    subtitle: props.frontmatter?.promotionSubtitle,
-    link: props.frontmatter?.promotionLink,
-    ctaText: props.frontmatter?.promotionCTA,
+      props.frontmatter.promotionTitle || props.frontmatter.promotionSubtitle,
+    subtitle: props.frontmatter.promotionSubtitle,
+    link: props.frontmatter.promotionLink,
+    ctaText: props.frontmatter.promotionCTA,
   };
 
   return (
