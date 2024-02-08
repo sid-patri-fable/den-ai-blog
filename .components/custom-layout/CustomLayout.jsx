@@ -15,11 +15,26 @@ const CustomLayout = (props) => {
   } = props;
   const isBlogRoute = rgxBlogRoute.test(window.location.pathname);
 
+  const bannerDetails = {
+    title: props.frontmatter.bannerTitle || props.frontmatter.bannerSubtitle,
+    subtitle: props.frontmatter?.bannerSubtitle || props.frontmatter?.subtitle,
+    date: props.frontmatter?.bannerDate || props.frontmatter?.date,
+    image: props.frontmatter?.bannerImg || props.frontmatter?.ogImg,
+  };
+
+  const promotionDetails = {
+    title:
+      props.frontmatter?.promotionTitle || props.frontmatter?.promotionSubtitle,
+    subtitle: props.frontmatter?.promotionSubtitle,
+    link: props.frontmatter?.promotionLink,
+    ctaText: props.frontmatter?.promotionCTA,
+  };
+
   return (
     <>
       <Header />
       <Sidepanel />
-      {(props.frontmatter.bannerTitle || props.frontmatter.bannerSubtitle) && (
+      {Boolean(bannerDetails.title) && (
         <Banner config={props.config} height={isBlogRoute && "60vh"}>
           <div
             style={
@@ -28,34 +43,26 @@ const CustomLayout = (props) => {
                 : { maxWidth: "768px" }
             }
           >
-            {props.frontmatter?.bannerDate || props.frontmatter?.date}
-            <h1 id="banner-title">
-              {props.frontmatter?.bannerTitle || props.frontmatter?.title}
-            </h1>
-            {props.frontmatter?.bannerSubtitle || props.frontmatter?.subtitle}
+            {bannerDetails.date}
+            <h1 id="banner-title">{bannerDetails.title}</h1>
+            {bannerDetails.subtitle}
           </div>
-          {(props.frontmatter?.bannerImg || props.frontmatter?.ogImg) && (
-            <CoverImg
-              src={props.frontmatter?.bannerImg || props.frontmatter?.ogImg}
-            />
-          )}
+          {bannerDetails.image && <CoverImg src={bannerDetails.image} />}
         </Banner>
       )}
       <Content toc={props.toc.length && props.toc}>{props.children}</Content>
-      {(props.frontmatter?.promotionTitle ||
-        props.frontmatter?.promotionSubtitle) && (
-          <Promotion config={props.config}>
-            <h2>{props.frontmatter.promotionTitle}</h2>
-            <p>{props.frontmatter.promotionSubtitle}</p>
-            {(props.frontmatter?.promotionLink ||
-              props.frontmatter.promotionCTA) && (
-                <PromotionBannerCta
-                  href={props.frontmatter.promotionLink}
-                  cta={props.frontmatter.promotionCTA}
-                />
-              )}
-          </Promotion>
-        )}
+      {promotionDetails.title && (
+        <Promotion config={props.config}>
+          <h2>{promotionDetails.title}</h2>
+          <p>{promotionDetails.subtitle}</p>
+          {(promotionDetails.link || promotionDetails.ctaText) && (
+            <PromotionBannerCta
+              href={promotionDetails.link}
+              cta={promotionDetails.ctaText}
+            />
+          )}
+        </Promotion>
+      )}
       <Footer />
     </>
   );
