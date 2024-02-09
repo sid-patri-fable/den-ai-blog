@@ -27,7 +27,6 @@ const getLatestPosts = (manifest) => {
     const node = queue.shift()
 
     if (node.nodeType === 'file' && node.ext === '.mdx' && !shouldSkipNode(node)) {
-      console.log(">>> node", node);
       latestPosts.push({ ...node.frontmatter, link: node.pathName })
     }
 
